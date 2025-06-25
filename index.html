@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentMD.dev | agent.md templates, always up‑to‑date</title>
+    <meta name="description" content="The canonical library for agent.md config files. Search 400+ templates, copy instantly, and ship faster.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --color-primary: #2563EB;
+            --color-primary-light: #60A5FA;
+            --color-secondary: #F59E0B;
+            --color-neutral-900: #0F172A;
+            --color-neutral-800: #1E293B;
+            --color-neutral-700: #334155;
+            --color-neutral-600: #475569;
+            --color-neutral-500: #64748B;
+            --color-neutral-400: #94A3B8;
+            --color-neutral-300: #CBD5E1;
+            --color-neutral-200: #E2E8F0;
+            --color-neutral-100: #F1F5F9;
+            --color-neutral-50: #F8FAFC;
+            --color-danger: #EF4444;
+            --color-success: #10B981;
+            --color-warning: #F59E0B;
+            
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-dark: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        [data-theme="dark"] {
+            --color-neutral-900: #F8FAFC;
+            --color-neutral-800: #F1F5F9;
+            --color-neutral-700: #E2E8F0;
+            --color-neutral-600: #CBD5E1;
+            --color-neutral-500: #94A3B8;
+            --color-neutral-400: #64748B;
+            --color-neutral-300: #475569;
+            --color-neutral-200: #334155;
+            --color-neutral-100: #1E293B;
+            --color-neutral-50: #020617;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--color-neutral-50);
+            color: var(--color-neutral-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-neutral-200);
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .header.scrolled {
+            background: rgba(248, 250, 252, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-neutral-900);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--color-neutral-700);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--color-neutral-300);
+            border-radius: 8px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--color-neutral-700);
+        }
+        
+        .theme-toggle:hover {
+            background: var(--color-neutral-100);
+            color: var(--color-primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-neutral-100);
+            border: 1px solid var(--color-neutral-200);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-neutral-700);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .hero-badge::before {
+            content: '\1F680';
+            font-size: 1rem;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-600) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-neutral-600);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+        }
+        
+        .hero-search {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem 1rem 3rem;
+            border: 2px solid var(--color-neutral-200);
+            border-radius: 16px;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-2px);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-neutral-400);
+            width: 20px;
+            height: 20px;
+        }
+        
+        .search-shortcut {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--color-neutral-100);
+            border: 1px solid var(--color-neutral-300);
+            border-radius: 6px;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            color: var(--color-neutral-500);
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--color-neutral-700);
+            border: 1px solid var(--color-neutral-300);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-neutral-50);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+            counter-reset: stat-counter;
+            animation: countUp 2s ease-out;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-neutral-600);
+            margin-top: 0.25rem;
+        }
+        
+        /* Value Proof Section */
+        .value-proof {
+            padding: 4rem 0;
+            background: white;
+            margin: 4rem 0;
+            border-radius: 32px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .value-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-neutral-900);
+        }
+        
+        .value-description {
+            color: var(--color-neutral-600);
+            font-size: 0.875rem;
+        }
+        
+        /* Featured Agents */
+        .featured-agents {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--color-neutral-900);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-neutral-600);
+            margin-bottom: 3rem;
+            font-size: 1.125rem;
+        }
+        
+        .agents-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        
+        .agents-track {
+            display: flex;
+            gap: 1.5rem;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 1rem 0;
+        }
+        
+        .agent-card {
+            flex: 0 0 300px;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-neutral-200);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .agent-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--gradient-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .agent-info h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-neutral-900);
+            margin-bottom: 0.25rem;
+        }
+        
+        .agent-provider {
+            font-size: 0.875rem;
+            color: var(--color-neutral-500);
+        }
+        
+        .agent-description {
+            color: var(--color-neutral-600);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .agent-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .agent-tag {
+            background: var(--color-neutral-100);
+            color: var(--color-neutral-700);
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .agent-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 8px;
+        }
+        
+        /* Code Integration */
+        .integration {
+            padding: 4rem 0;
+            background: var(--color-neutral-900);
+            color: white;
+            border-radius: 32px;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .integration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-dark);
+            opacity: 0.8;
+        }
+        
+        .integration-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .integration h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .integration p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 0.5rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Trust Signals */
+        .trust-signals {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .trust-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            background: var(--color-neutral-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .trust-stat {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .trust-label {
+            color: var(--color-neutral-600);
+            font-size: 0.875rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--color-neutral-900);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes countUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+            
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .agent-card {
+                flex: 0 0 280px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* Dark mode */
+        [data-theme="dark"] {
+            background: var(--color-neutral-50);
+            color: var(--color-neutral-900);
+        }
+        
+        [data-theme="dark"] .header {
+            background: rgba(2, 6, 23, 0.8);
+            border-bottom-color: var(--color-neutral-200);
+        }
+        
+        [data-theme="dark"] .header.scrolled {
+            background: rgba(2, 6, 23, 0.95);
+        }
+        
+        [data-theme="dark"] .search-input {
+            background: var(--color-neutral-100);
+            border-color: var(--color-neutral-200);
+            color: var(--color-neutral-900);
+        }
+        
+        [data-theme="dark"] .value-proof {
+            background: var(--color-neutral-100);
+        }
+        
+        [data-theme="dark"] .agent-card {
+            background: var(--color-neutral-100);
+            border-color: var(--color-neutral-200);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .floating-element {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <div class="logo-icon">A</div>
+                    AgentMD.dev
+                </a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">Browse</a>
+                    <a href="#" class="nav-link">Docs</a>
+                    <a href="#" class="nav-link">GitHub</a>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-elements">
+            <div class="floating-element" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="floating-element" style="left: 20%; animation-delay: 1s;"></div>
+            <div class="floating-element" style="left: 30%; animation-delay: 2s;"></div>
+            <div class="floating-element" style="left: 70%; animation-delay: 1.5s;"></div>
+            <div class="floating-element" style="left: 80%; animation-delay: 0.5s;"></div>
+            <div class="floating-element" style="left: 90%; animation-delay: 2.5s;"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    New: 400+ agent templates added this week
+                </div>
+                
+                <h1 class="hero-title">
+                    The canonical library for<br>
+                    <span style="background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">agent.md</span> config files
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Search, copy, and deploy production-ready agent configurations from every major LLM provider. Always up-to-date, always reliable.
+                </p>
+                
+                <div class="hero-search">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="Search 400+ agent.md files..."
+                        id="search-input"
+                    >
+                    <div class="search-shortcut">⌘/
+                    </div>
+                </div>
+                
+                <div class="hero-ctas">
+                    <a href="#" class="btn btn-primary">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        Browse All Agents
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        View Documentation
+                    </a>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="427">427</span>
+                        <div class="stat-label">Agent Templates</div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="15">15</span>
+                        <div class="stat-label">LLM Providers</div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="2400">2.4k</span>
+                        <div class="stat-label">GitHub Stars</div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="99">99%</span>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proof Section -->
+    <section class="value-proof">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">⚡</div>
+                    <h3 class="value-title">Lightning Fast</h3>
+                    <p class="value-description">Find and copy any agent config in under 3 seconds. No more hunting through documentation.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🔄</div>
+                    <h3 class="value-title">Always Updated</h3>
+                    <p class="value-description">Configs are synced daily with official provider APIs. Never ship outdated configurations.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🛡️</div>
+                    <h3 class="value-title">Battle Tested</h3>
+                    <p class="value-description">Every template is production-ready and validated by thousands of developers worldwide.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <h3 class="value-title">Provider Agnostic</h3>
+                    <p class="value-description">Works with OpenAI, Anthropic, Google, Azure, AWS, and 10+ other LLM providers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Agents -->
+    <section class="featured-agents">
+        <div class="container">
+            <h2 class="section-title">Featured Agent Templates</h2>
+            <p class="section-subtitle">Hand-picked configurations from top developers and companies</p>
+            
+            <div class="agents-carousel">
+                <div class="agents-track" id="agents-track">
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar">GPT</div>
+                            <div class="agent-info">
+                                <h3>Code Assistant Pro</h3>
+                                <div class="agent-provider">OpenAI GPT-4</div>
+                            </div>
+                        </div>
+                        <p class="agent-description">
+                            Advanced code generation and debugging assistant with context awareness and multi-language support.
+                        </p>
+                        <div class="agent-tags">
+                            <span class="agent-tag">Code Gen</span>
+                            <span class="agent-tag">Debugging</span>
+                            <span class="agent-tag">Multi-lang</span>
+                        </div>
+                        <div class="agent-actions">
+                            <button class="btn btn-primary btn-small copy-agent" data-config="gpt4-code-assistant">
+                                Copy Config
+                            </button>
+                            <button class="btn btn-secondary btn-small">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar" style="background: var(--gradient-secondary);">CL</div>
+                            <div class="agent-info">
+                                <h3>Research Analyst</h3>
+                                <div class="agent-provider">Anthropic Claude</div>
+                            </div>
+                        </div>
+                        <p class="agent-description">
+                            Comprehensive research and analysis agent that processes documents, extracts insights, and generates reports.
+                        </p>
+                        <div class="agent-tags">
+                            <span class="agent-tag">Research</span>
+                            <span class="agent-tag">Analysis</span>
+                            <span class="agent-tag">Reports</span>
+                        </div>
+                        <div class="agent-actions">
+                            <button class="btn btn-primary btn-small copy-agent" data-config="claude-research">
+                                Copy Config
+                            </button>
+                            <button class="btn btn-secondary btn-small">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar" style="background: linear-gradient(135deg, #ea4335 0%, #fbbc05 100%);">GM</div>
+                            <div class="agent-info">
+                                <h3>Content Creator</h3>
+                                <div class="agent-provider">Google Gemini</div>
+                            </div>
+                        </div>
+                        <p class="agent-description">
+                            Creative writing and content generation specialist for blogs, social media, and marketing materials.
+                        </p>
+                        <div class="agent-tags">
+                            <span class="agent-tag">Content</span>
+                            <span class="agent-tag">Creative</span>
+                            <span class="agent-tag">Marketing</span>
+                        </div>
+                        <div class="agent-actions">
+                            <button class="btn btn-primary btn-small copy-agent" data-config="gemini-content">
+                                Copy Config
+                            </button>
+                            <button class="btn btn-secondary btn-small">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar" style="background: linear-gradient(135deg, #00d4ff 0%, #5b86e5 100%);">AZ</div>
+                            <div class="agent-info">
+                                <h3>Data Scientist</h3>
+                                <div class="agent-provider">Azure OpenAI</div>
+                            </div>
+                        </div>
+                        <p class="agent-description">
+                            Statistical analysis and machine learning specialist for data processing and predictive modeling.
+                        </p>
+                        <div class="agent-tags">
+                            <span class="agent-tag">Data Science</span>
+                            <span class="agent-tag">ML</span>
+                            <span class="agent-tag">Analytics</span>
+                        </div>
+                        <div class="agent-actions">
+                            <button class="btn btn-primary btn-small copy-agent" data-config="azure-data-science">
+                                Copy Config
+                            </button>
+                            <button class="btn btn-secondary btn-small">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-avatar" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);">CS</div>
+                            <div class="agent-info">
+                                <h3>Customer Support</h3>
+                                <div class="agent-provider">Custom Model</div>
+                            </div>
+                        </div>
+                        <p class="agent-description">
+                            Intelligent customer service agent with ticket routing, FAQ responses, and escalation handling.
+                        </p>
+                        <div class="agent-tags">
+                            <span class="agent-tag">Support</span>
+                            <span class="agent-tag">FAQ</span>
+                            <span class="agent-tag">Routing</span>
+                        </div>
+                        <div class="agent-actions">
+                            <button class="btn btn-primary btn-small copy-agent" data-config="custom-support">
+                                Copy Config
+                            </button>
+                            <button class="btn btn-secondary btn-small">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Code -->
+    <section class="integration">
+        <div class="container">
+            <div class="integration-content">
+                <h2>Get Started in Seconds</h2>
+                <p>Copy any agent config and integrate it into your project with just a few lines of code.</p>
+                
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </button>
+                    <pre><code id="integration-code"># Install AgentMD CLI
+npm install -g agentmd-cli
+
+# Search and download agent config
+agentmd search "code assistant"
+agentmd get gpt4-code-assistant
+
+# Use in your project
+import { Agent } from './agent.md'
+const assistant = new Agent(config)</code></pre>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <a href="#" class="btn btn-primary">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Download CLI Tool
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="trust-signals">
+        <div class="container">
+            <h2 class="section-title">Trusted by Developers Worldwide</h2>
+            <p class="section-subtitle">Join thousands of developers who rely on AgentMD.dev for their AI projects</p>
+            
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">⭐</div>
+                    <div class="trust-stat">2,400+</div>
+                    <div class="trust-label">GitHub Stars</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">👥</div>
+                    <div class="trust-stat">15k+</div>
+                    <div class="trust-label">Active Users</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🏢</div>
+                    <div class="trust-stat">500+</div>
+                    <div class="trust-label">Companies</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🔄</div>
+                    <div class="trust-stat">Daily</div>
+                    <div class="trust-label">Updates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AgentMD.dev</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem;">
+                        The canonical library for agent.md config files. Always up-to-date, always reliable.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">CLI Tool</a></li>
+                        <li><a href="#">Templates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    <p style="color: rgba(255, 255, 255, 0.6);">
+                        © 2025 AgentMD.dev. Licensed under MIT.
+                    </p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9554 2.4189-2.1568 2.4189Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('search-input');
+        
+        searchInput.addEventListener('focus', () => {
+            searchInput.style.transform = 'translateY(-2px)';
+        });
+        
+        searchInput.addEventListener('blur', () => {
+            searchInput.style.transform = 'translateY(0)';
+        });
+
+        // Keyboard shortcut for search
+        document.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === '/') {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+
+        // Copy agent config functionality
+        const copyAgentButtons = document.querySelectorAll('.copy-agent');
+        copyAgentButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const config = button.getAttribute('data-config');
+                // Simulate copying config
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = 'var(--color-success)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = 'var(--color-primary)';
+                }, 2000);
+            });
+        });
+
+        // Copy code functionality
+        function copyCode() {
+            const code = document.getElementById('integration-code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const copyBtn = document.querySelector('.copy-btn');
+                copyBtn.innerHTML = `
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                `;
+                setTimeout(() => {
+                    copyBtn.innerHTML = `
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    `;
+                }, 2000);
+            });
+        }
+
+        // Animate stats on scroll
+        const animateStats = () => {
+            const stats = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalValue = target.getAttribute('data-target');
+                        animateValue(target, 0, finalValue, 2000);
+                        observer.unobserve(target);
+                    }
+                });
+            });
+
+            stats.forEach(stat => observer.observe(stat));
+        };
+
+        const animateValue = (element, start, end, duration) => {
+            const startTime = performance.now();
+            const isPercentage = end.includes('%');
+            const isFloat = end.includes('k') || end.includes('.');
+            const numEnd = parseFloat(end.replace(/[^\d.]/g, ''));
+
+            const animate = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                
+                let current = start + (numEnd * easeOutQuart);
+                
+                if (isFloat && end.includes('k')) {
+                    element.textContent = (current / 1000).toFixed(1) + 'k';
+                } else if (isPercentage) {
+                    element.textContent = Math.floor(current) + '%';
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            };
+
+            requestAnimationFrame(animate);
+        };
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            animateStats();
+        });
+
+        // Agent carousel auto-scroll
+        let currentSlide = 0;
+        const agentsTrack = document.getElementById('agents-track');
+        const agentCards = document.querySelectorAll('.agent-card');
+        const totalSlides = agentCards.length;
+
+        const autoScroll = () => {
+            currentSlide = (currentSlide + 1) % Math.max(1, totalSlides - 2);
+            const offset = currentSlide * 320; // card width + gap
+            agentsTrack.style.transform = `translateX(-${offset}px)`;
+        };
+
+        // Start auto-scroll after 3 seconds
+        setTimeout(() => {
+            setInterval(autoScroll, 4000);
+        }, 3000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
