@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+const agents = await Astro.glob('../../content/agents/*/index.mdx');
+---
+<Base title="All Agents | AgentMD.dev">
+  <Nav />
+  <main class="mx-auto max-w-6xl p-4">
+    <h1 class="mb-4 text-3xl font-bold">All Agents</h1>
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      {agents.map(agent => (
+        <a href={agent.url} class="rounded border p-4" key={agent.url}>
+          <h2 class="font-semibold">{agent.frontmatter.title}</h2>
+          <p>{agent.frontmatter.brief}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</Base>
