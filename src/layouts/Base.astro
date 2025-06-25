@@ -1,0 +1,28 @@
+---
+const { title = 'AgentMD.dev', description, url } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#00bcd4" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <meta property="og:site_name" content="AgentMD.dev" />
+    {title && <meta property="og:title" content={title} />}
+    {description && <meta property="og:description" content={description} />}
+    {url && <meta property="og:url" content={url} />}
+    {title && <meta name="twitter:title" content={title} />}
+    {description && <meta name="twitter:description" content={description} />}
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AgentMD.dev",
+      "url": "https://agentmd.dev"
+    }</script>
+  </head>
+  <body class="min-h-screen bg-white text-gray-900 dark:bg-agent-dark dark:text-white">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur dark:bg-agent-dark/80">
+  <div class="mx-auto flex max-w-6xl items-center justify-between p-4">
+    <a href="/" class="text-lg font-bold">AgentMD.dev</a>
+    <div class="flex items-center gap-4">
+      <a href="/">Home</a>
+      <a href="/agents/">All Agents</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <button id="theme-toggle" class="ml-4">🌓</button>
+    </div>
+  </div>
+</nav>
+<script>
+  const btn = document.getElementById('theme-toggle');
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+  });
+</script>
