@@ -166,7 +166,14 @@
             background: var(--color-neutral-100);
             color: var(--color-primary);
         }
-        
+
+        .intro-text {
+            text-align: center;
+            padding: 1rem 0.5rem;
+            color: var(--color-neutral-700);
+            font-size: 1rem;
+        }
+
         /* Hero Section */
         .hero {
             padding: 8rem 0 4rem;
@@ -705,6 +712,30 @@
             background: var(--color-primary);
             transform: translateY(-2px);
         }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            z-index: 1000;
+        }
+
+        .sticky-cta a {
+            color: white;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        [data-theme="dark"] .sticky-cta {
+            background: var(--color-neutral-800);
+        }
         
         /* Animations */
         @keyframes fadeInUp {
@@ -837,6 +868,10 @@
         </div>
     </header>
 
+    <div class="intro-text">
+        Each agent <code>.md</code> file is a prompt template tailored to that model — including the system message, function definitions, and more.
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="floating-elements">
@@ -855,12 +890,11 @@
                 </div>
                 
                 <h1 class="hero-title">
-                    The canonical library for<br>
-                    <span style="background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">agent.md</span> config files
+                    🎯 Ready-to-use Prompt Templates for Claude, GPT, Gemini & More
                 </h1>
-                
+
                 <p class="hero-subtitle">
-                    Search, copy, and deploy production-ready agent configurations from every major LLM provider. Always up-to-date, always reliable.
+                    agent.md files to help you start faster with the right prompt for the right model.
                 </p>
                 
                 <div class="hero-search">
@@ -1217,6 +1251,10 @@ const assistant = new Agent(config)</code></pre>
             </div>
         </div>
     </footer>
+
+    <div class="sticky-cta">
+        Want to contribute a prompt template? → <a href="#">Submit via GitHub</a>
+    </div>
 
     <script>
         // Header scroll effect
