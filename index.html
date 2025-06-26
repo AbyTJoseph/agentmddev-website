@@ -790,32 +790,42 @@
         
         /* Dark mode */
         [data-theme="dark"] {
-            background: var(--color-neutral-50);
-            color: var(--color-neutral-900);
+            --color-neutral-900: #F8FAFC;
+            --color-neutral-800: #F1F5F9;
+            --color-neutral-700: #E2E8F0;
+            --color-neutral-600: #CBD5E1;
+            --color-neutral-500: #94A3B8;
+            --color-neutral-400: #64748B;
+            --color-neutral-300: #475569;
+            --color-neutral-200: #334155;
+            --color-neutral-100: #1E293B;
+            --color-neutral-50: #0F172A;
         }
         
         [data-theme="dark"] .header {
-            background: rgba(2, 6, 23, 0.8);
-            border-bottom-color: var(--color-neutral-200);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom-color: var(--color-neutral-800);
         }
         
         [data-theme="dark"] .header.scrolled {
-            background: rgba(2, 6, 23, 0.95);
+            background: rgba(15, 23, 42, 0.95);
         }
         
         [data-theme="dark"] .search-input {
-            background: var(--color-neutral-100);
-            border-color: var(--color-neutral-200);
-            color: var(--color-neutral-900);
+            background: var(--color-neutral-800);
+            border-color: var(--color-neutral-700);
+            color: var(--color-neutral-100);
         }
         
         [data-theme="dark"] .value-proof {
-            background: var(--color-neutral-100);
+            background: var(--color-neutral-900);
+            border-top: 1px solid var(--color-neutral-800);
+            border-bottom: 1px solid var(--color-neutral-800);
         }
         
         [data-theme="dark"] .agent-card {
-            background: var(--color-neutral-100);
-            border-color: var(--color-neutral-200);
+            background: var(--color-neutral-800);
+            border-color: var(--color-neutral-700);
         }
         
         .floating-elements {
@@ -1572,14 +1582,24 @@ const assistant = new Agent(config)</code></pre>
 
         // Theme toggle
         const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        function setIcon(theme) {
+            themeToggle.innerHTML = theme === 'dark' 
+                ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>`
+                : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
+        }
+
         const currentTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', currentTheme);
+        setIcon(currentTheme);
 
         themeToggle.addEventListener('click', () => {
             const theme = document.documentElement.getAttribute('data-theme');
             const newTheme = theme === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
+            setIcon(newTheme);
         });
 
         // Search functionality
