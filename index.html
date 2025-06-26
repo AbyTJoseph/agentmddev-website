@@ -259,14 +259,14 @@
             box-shadow: var(--shadow-md);
         }
         
-        .search-input:focus {
+        #template-hub .search-input:focus {
             outline: none;
             border-color: var(--color-primary);
             box-shadow: var(--shadow-glow);
             transform: translateY(-2px);
         }
         
-        .search-icon {
+        #template-hub .search-icon {
             position: absolute;
             left: 1rem;
             top: 50%;
@@ -854,61 +854,33 @@
             --card-bg: rgba(255, 255, 255, 0.9);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        #template-hub {
             background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
-            min-height: 100vh;
             color: var(--text-dark);
-            line-height: 1.6;
+            padding: 4rem 0;
         }
 
-        .container {
+        #template-hub .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-light);
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .controls {
+        #template-hub .controls {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
-        .search-container {
+        #template-hub .search-container {
             position: relative;
             max-width: 500px;
             margin: 0 auto;
             width: 100%;
         }
 
-        .search-input {
+        #template-hub .search-input {
             width: 100%;
             padding: 1rem 1.5rem 1rem 3.5rem;
             border: none;
@@ -937,7 +909,7 @@
             pointer-events: none;
         }
 
-        .filter-bar {
+        #template-hub .filter-bar {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
@@ -948,7 +920,7 @@
             border-radius: 20px;
         }
 
-        .filter-btn {
+        #template-hub .filter-btn {
             padding: 0.75rem 1.5rem;
             border: 2px solid rgba(255, 255, 255, 0.2);
             background: transparent;
@@ -960,18 +932,18 @@
             font-size: 0.9rem;
         }
 
-        .filter-btn:hover {
+        #template-hub .filter-btn:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: translateY(-2px);
         }
 
-        .filter-btn.active {
+        #template-hub .filter-btn.active {
             background: white;
             color: var(--primary-start);
             border-color: white;
         }
 
-        .results-info {
+        #template-hub .results-info {
             text-align: center;
             margin-bottom: 2rem;
             color: var(--text-light);
@@ -979,14 +951,14 @@
             opacity: 0.8;
         }
 
-        .cards-grid {
+        #template-hub .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .card {
+        #template-hub .card {
             background: var(--card-bg);
             backdrop-filter: blur(20px);
             border-radius: 24px;
@@ -1000,7 +972,7 @@
             flex-direction: column;
         }
 
-        .card::before {
+        #template-hub .card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0;
@@ -1008,20 +980,20 @@
             background: linear-gradient(90deg, var(--primary-start), var(--primary-end));
         }
 
-        .card:hover {
+        #template-hub .card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
             background: white;
         }
 
-        .card-header {
+        #template-hub .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 1rem;
         }
 
-        .card-title {
+        #template-hub .card-title {
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--text-dark);
@@ -1030,7 +1002,7 @@
             margin-right: 1rem;
         }
 
-        .category-badge {
+        #template-hub .category-badge {
             background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
             color: white;
             padding: 0.5rem 1rem;
@@ -1042,21 +1014,21 @@
             flex-shrink: 0;
         }
 
-        .card-description {
+        #template-hub .card-description {
             color: #4a5568;
             margin-bottom: 1.5rem;
             font-size: 1rem;
             flex-grow: 1;
         }
 
-        .card-tags {
+        #template-hub .card-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 2rem;
         }
 
-        .tag {
+        #template-hub .tag {
             background: #f0f2f5;
             color: #4a5568;
             padding: 0.4rem 0.8rem;
@@ -1066,39 +1038,39 @@
             border: 1px solid #e2e8f0;
         }
 
-        .card-footer {
+        #template-hub .card-footer {
             display: flex;
             gap: 1rem;
             margin-top: auto;
         }
 
-        .btn {
+        #template-hub .btn {
             padding: 0.8rem 1.5rem; border: none; border-radius: 50px; cursor: pointer;
             font-weight: 600; transition: all 0.3s ease; text-decoration: none;
             display: inline-flex; align-items: center; gap: 0.5rem;
             font-size: 0.9rem; flex: 1; justify-content: center;
         }
         
-        .btn-icon { width: 16px; height: 16px; }
+        #template-hub .btn-icon { width: 16px; height: 16px; }
 
-        .btn-primary {
+        #template-hub .btn-primary {
             background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
             color: white;
             box-shadow: 0 8px 25px rgba(94, 114, 228, 0.3);
         }
-        .btn-primary:hover {
+        #template-hub .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 35px rgba(94, 114, 228, 0.4);
         }
 
-        .btn-secondary {
+        #template-hub .btn-secondary {
             background: transparent; color: var(--primary-start); border: 2px solid var(--primary-start);
         }
-        .btn-secondary:hover {
+        #template-hub .btn-secondary:hover {
             background: var(--primary-start); color: white; transform: translateY(-2px);
         }
 
-        .toast {
+        #template-hub .toast {
             position: fixed; bottom: 2rem; left: 50%;
             transform: translate(-50%, 150px);
             background: #48bb78; color: white;
@@ -1107,46 +1079,46 @@
             opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 2000; font-weight: 600;
         }
-        .toast.show { transform: translate(-50%, 0); opacity: 1; }
+        #template-hub .toast.show { transform: translate(-50%, 0); opacity: 1; }
 
-        .no-results {
+        #template-hub .no-results {
             text-align: center; padding: 4rem 2rem; color: white; display: none;
         }
-        .no-results h3 { font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.9; }
-        .no-results p { opacity: 0.7; }
+        #template-hub .no-results h3 { font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.9; }
+        #template-hub .no-results p { opacity: 0.7; }
 
         /* Modal Styles */
-        .modal-overlay {
+        #template-hub .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
             z-index: 1000; display: flex; align-items: center; justify-content: center;
             opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
         }
-        .modal-overlay.show { opacity: 1; pointer-events: auto; }
+        #template-hub .modal-overlay.show { opacity: 1; pointer-events: auto; }
 
-        .modal-content {
+        #template-hub .modal-content {
             background: white; border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             width: 90%; max-width: 800px;
             max-height: 90vh; display: flex; flex-direction: column;
             transform: scale(0.95); transition: transform 0.3s ease;
         }
-        .modal-overlay.show .modal-content { transform: scale(1); }
+        #template-hub .modal-overlay.show .modal-content { transform: scale(1); }
 
-        .modal-header {
+        #template-hub .modal-header {
             padding: 1.5rem 2rem; border-bottom: 1px solid #e2e8f0;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .modal-title { font-size: 1.5rem; font-weight: 700; color: var(--text-dark); }
-        .modal-close-btn {
+        #template-hub .modal-title { font-size: 1.5rem; font-weight: 700; color: var(--text-dark); }
+        #template-hub .modal-close-btn {
             background: #f0f2f5; border: none; border-radius: 50%;
             width: 40px; height: 40px; cursor: pointer; display: flex;
             align-items: center; justify-content: center; transition: all 0.2s;
         }
-        .modal-close-btn:hover { background: #e2e8f0; transform: rotate(90deg); }
+        #template-hub .modal-close-btn:hover { background: #e2e8f0; transform: rotate(90deg); }
 
-        .modal-body { padding: 2rem; overflow-y: auto; }
-        .modal-prompt {
+        #template-hub .modal-body { padding: 2rem; overflow-y: auto; }
+        #template-hub .modal-prompt {
             background: #f8f9fe; border: 1px solid #e2e8f0;
             border-radius: 12px; padding: 1.5rem;
             white-space: pre-wrap; word-wrap: break-word;
@@ -1154,12 +1126,12 @@
             font-size: 0.95rem; line-height: 1.7; color: #334155;
             max-height: 50vh; overflow-y: auto;
         }
-        .modal-footer {
+        #template-hub .modal-footer {
             padding: 1.5rem 2rem; border-top: 1px solid #e2e8f0;
             display: flex; justify-content: flex-end;
         }
         
-        .fade-in {
+        #template-hub .fade-in {
             animation: fadeInUp 0.5s ease-out forwards;
         }
 
@@ -1169,13 +1141,13 @@
         }
 
         @media (max-width: 768px) {
-            .container { padding: 1rem; }
-            .header h1 { font-size: 2.2rem; }
-            .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .card { padding: 1.5rem; }
-            .card-footer { flex-direction: column; }
-            .modal-content { width: 95%; }
-            .modal-header, .modal-body, .modal-footer { padding: 1rem 1.5rem; }
+            #template-hub .container { padding: 1rem; }
+            #template-hub .header h1 { font-size: 2.2rem; }
+            #template-hub .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            #template-hub .card { padding: 1.5rem; }
+            #template-hub .card-footer { flex-direction: column; }
+            #template-hub .modal-content { width: 95%; }
+            #template-hub .modal-header, #template-hub .modal-body, #template-hub .modal-footer { padding: 1rem 1.5rem; }
         }
     </style>
 </head>
@@ -1312,7 +1284,8 @@
     </section>
 
     <!-- LLM Agent Template Hub -->
-    <div class="container">
+    <section id="template-hub">
+        <div class="container">
 
         <div class="controls">
             <div class="search-container">
@@ -1332,12 +1305,12 @@
             <h3>No Templates Found</h3>
             <p>Your search or filter criteria did not match any templates. Please try again.</p>
         </div>
-    </div>
+        </div>
 
-    <div class="toast" id="toast">Prompt copied to clipboard!</div>
+        <div class="toast" id="toast">Prompt copied to clipboard!</div>
 
-    <div class="modal-overlay" id="promptModal">
-        <div class="modal-content">
+        <div class="modal-overlay" id="promptModal">
+            <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="modalTitle"></h2>
                 <button class="modal-close-btn" id="modalCloseBtn" title="Close">
@@ -1354,7 +1327,8 @@
                 </button>
             </div>
         </div>
-    </div>
+        </div>
+    </section>
 
     <!-- Featured Agents -->
     <section class="featured-agents">
