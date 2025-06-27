@@ -417,117 +417,13 @@
             font-size: 0.875rem;
         }
         
-        /* Featured Agents */
-        .featured-agents {
-            padding: 4rem 0;
-        }
-        
+        /* Section heading */
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
             margin-bottom: 1rem;
             color: var(--color-neutral-900);
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: var(--color-neutral-600);
-            margin-bottom: 3rem;
-            font-size: 1.125rem;
-        }
-        
-        .agents-carousel {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-        }
-        
-        .agents-track {
-            display: flex;
-            gap: 1.5rem;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 1rem 0;
-        }
-        
-        .agent-card {
-            flex: 0 0 300px;
-            background: white;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-neutral-200);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .agent-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .agent-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .agent-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: var(--gradient-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-        }
-        
-        .agent-info h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--color-neutral-900);
-            margin-bottom: 0.25rem;
-        }
-        
-        .agent-provider {
-            font-size: 0.875rem;
-            color: var(--color-neutral-500);
-        }
-        
-        .agent-description {
-            color: var(--color-neutral-600);
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-        
-        .agent-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .agent-tag {
-            background: var(--color-neutral-100);
-            color: var(--color-neutral-700);
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        
-        .agent-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .btn-small {
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-            border-radius: 8px;
         }
         
         /* Code Integration */
@@ -778,9 +674,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .agent-card {
-                flex: 0 0 280px;
-            }
             
             .footer-bottom {
                 flex-direction: column;
@@ -823,10 +716,6 @@
             border-bottom: 1px solid var(--color-neutral-800);
         }
         
-        [data-theme="dark"] .agent-card {
-            background: var(--color-neutral-800);
-            border-color: var(--color-neutral-700);
-        }
         
         .floating-elements {
             position: absolute;
@@ -1142,14 +1031,267 @@
         
         
 
-        @media (max-width: 768px) {
-            #template-hub .container { padding: 1rem; }
-            #template-hub .header h1 { font-size: 2.2rem; }
-            #template-hub .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            #template-hub .card { padding: 1.5rem; }
-            #template-hub .card-footer { flex-direction: column; }
-            #template-hub .modal-content { width: 95%; }
-            #template-hub .modal-header, #template-hub .modal-body, #template-hub .modal-footer { padding: 1rem 1.5rem; }
+    @media (max-width: 768px) {
+        #template-hub .container { padding: 1rem; }
+        #template-hub .header h1 { font-size: 2.2rem; }
+        #template-hub .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        #template-hub .card { padding: 1.5rem; }
+        #template-hub .card-footer { flex-direction: column; }
+        #template-hub .modal-content { width: 95%; }
+        #template-hub .modal-header, #template-hub .modal-body, #template-hub .modal-footer { padding: 1rem 1.5rem; }
+    }
+
+        /* AgentMD guide styles */
+        #agentmd-guide .info-hero {
+            text-align: center;
+        }
+
+        #agentmd-guide .info-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: linear-gradient(to right, #dbeafe, #e9d5ff);
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-neutral-700);
+        }
+
+        #agentmd-guide .info-hero-title {
+            font-size: clamp(2.25rem, 6vw, 3.75rem);
+            font-weight: 700;
+            background: linear-gradient(to right, #111827, #1e3a8a, #6b21a8);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        #agentmd-guide .info-hero-title code {
+            background: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #2563eb;
+        }
+
+        #agentmd-guide .info-hero-description {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 768px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        #agentmd-guide .info-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        #agentmd-guide .info-benefit-card {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #f3f4f6;
+            transition: all 0.3s ease;
+        }
+
+        #agentmd-guide .info-benefit-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-2px);
+        }
+
+        #agentmd-guide .info-benefit-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        #agentmd-guide .info-benefit-icon {
+            padding: 12px;
+            border-radius: 12px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        #agentmd-guide .gradient-1 { background: linear-gradient(to right, #3b82f6, #06b6d4); }
+        #agentmd-guide .gradient-2 { background: linear-gradient(to right, #10b981, #059669); }
+        #agentmd-guide .gradient-3 { background: linear-gradient(to right, #8b5cf6, #ec4899); }
+        #agentmd-guide .gradient-4 { background: linear-gradient(to right, #f97316, #ef4444); }
+
+        #agentmd-guide .info-benefit-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #agentmd-guide .info-benefit-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #9ca3af;
+        }
+
+        #agentmd-guide .info-benefit-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        #agentmd-guide .info-benefit-description {
+            color: #4b5563;
+            line-height: 1.75;
+        }
+
+        #agentmd-guide .info-template-grid {
+            background: linear-gradient(to bottom right, #f9fafb, #dbeafe);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        #agentmd-guide .info-anatomy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        #agentmd-guide .info-anatomy-card {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        #agentmd-guide .info-anatomy-title {
+            font-weight: 700;
+            color: #111827;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        #agentmd-guide .info-anatomy-fields {
+            font-size: 12px;
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        #agentmd-guide .info-anatomy-example {
+            font-size: 12px;
+            background: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #2563eb;
+            font-family: monospace;
+            display: block;
+        }
+
+        #agentmd-guide .info-ecosystem-table {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #f3f4f6;
+            overflow: hidden;
+        }
+
+        #agentmd-guide .info-ecosystem-table table { width: 100%; border-collapse: collapse; }
+        #agentmd-guide .info-ecosystem-table thead { background: linear-gradient(to right, #f9fafb, #dbeafe); }
+        #agentmd-guide .info-ecosystem-table th { padding: 16px 24px; text-align: left; font-size: 14px; font-weight: 600; color: #111827; }
+        #agentmd-guide .info-ecosystem-table td { padding: 16px 24px; border-top: 1px solid #f3f4f6; }
+        #agentmd-guide .info-ecosystem-table tr:hover { background: #f9fafb; }
+
+        #agentmd-guide .info-workflow {
+            background: linear-gradient(to right, #dbeafe, #e9d5ff);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        #agentmd-guide .info-workflow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        #agentmd-guide .info-workflow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #agentmd-guide .info-workflow-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        #agentmd-guide .info-workflow-title { font-weight: 600; color: #111827; font-size: 14px; }
+        #agentmd-guide .info-workflow-desc { font-size: 12px; color: #4b5563; }
+        #agentmd-guide .info-workflow-arrow { width: 16px; height: 16px; color: #9ca3af; }
+
+        #agentmd-guide .info-practical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        #agentmd-guide .info-practical-card {
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid;
+            transition: all 0.3s ease;
+        }
+
+        #agentmd-guide .info-practical-card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transform: scale(1.02);
+        }
+
+        #agentmd-guide .info-practical-card.color-1 { background: linear-gradient(to bottom right, #dbeafe, #e0f2fe); border-color: #dbeafe; }
+        #agentmd-guide .info-practical-card.color-2 { background: linear-gradient(to bottom right, #d1fae5, #ccfbf1); border-color: #d1fae5; }
+        #agentmd-guide .info-practical-card.color-3 { background: linear-gradient(to bottom right, #e9d5ff, #fce7f3); border-color: #e9d5ff; }
+        #agentmd-guide .info-practical-card.color-4 { background: linear-gradient(to bottom right, #fed7aa, #fef3c7); border-color: #fed7aa; }
+        #agentmd-guide .info-practical-card.color-5 { background: linear-gradient(to bottom right, #fecaca, #fee2e2); border-color: #fecaca; }
+
+        #agentmd-guide .info-practical-content { display: flex; align-items: flex-start; gap: 8px; }
+        #agentmd-guide .info-practical-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        #agentmd-guide .info-practical-dot.dot-1 { background: linear-gradient(to right, #60a5fa, #3b82f6); }
+        #agentmd-guide .info-practical-dot.dot-2 { background: linear-gradient(to right, #34d399, #059669); }
+        #agentmd-guide .info-practical-dot.dot-3 { background: linear-gradient(to right, #a78bfa, #ec4899); }
+        #agentmd-guide .info-practical-dot.dot-4 { background: linear-gradient(to right, #fb923c, #f59e0b); }
+        #agentmd-guide .info-practical-dot.dot-5 { background: linear-gradient(to right, #f87171, #ef4444); }
+        #agentmd-guide .info-practical-text { color: #374151; font-size: 14px; line-height: 1.75; }
+
+        #agentmd-guide .info-code-block { background: #111827; border-radius: 16px; padding: 24px; position: relative; }
+        #agentmd-guide .info-copy-button { position: absolute; top: 16px; right: 16px; padding: 8px; background: #374151; border: none; border-radius: 8px; color: white; cursor: pointer; transition: background-color 0.3s ease; }
+        #agentmd-guide .info-copy-button:hover { background: #4b5563; }
+        #agentmd-guide .info-code-pre { color: #10b981; font-size: 14px; overflow-x: auto; font-family: monospace; white-space: pre; }
+        #agentmd-guide .info-code-note { text-align: center; color: #4b5563; font-style: italic; }
+
+        #agentmd-guide .info-tips-toggle { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 24px; background: linear-gradient(to right, #fefce8, #fed7aa); border-radius: 16px; border: 1px solid #fbbf24; cursor: pointer; transition: all 0.3s ease; }
+        #agentmd-guide .info-tips-toggle:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        #agentmd-guide .info-tips-title { font-size: 1.5rem; font-weight: 700; color: #111827; }
+        #agentmd-guide .info-tips-content { background: white; border-radius: 16px; padding: 24px; box-shadow: var(--shadow-md); border: 1px solid #f3f4f6; }
+        #agentmd-guide .info-tip-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: #fefce8; border-radius: 8px; }
+        #agentmd-guide .info-tip-dot { width: 8px; height: 8px; background: #eab308; border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+        #agentmd-guide .info-tip-text { color: #374151; }
+        #agentmd-guide .hidden { display: none; }
+
+        @media (max-width: 640px) {
+            #agentmd-guide .info-workflow-arrow { display: none; }
+            #agentmd-guide .info-anatomy-grid { grid-template-columns: 1fr; }
+            #agentmd-guide .info-benefits-grid { grid-template-columns: 1fr; }
+            #agentmd-guide .info-practical-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -1270,6 +1412,293 @@
             </div>
         </div>
     </section>
+    <!-- AgentMD Guide -->
+    <section id="agentmd-guide">
+        <div class="container space-y-10">
+            <div class="info-hero space-y-6">
+                <div class="info-hero-badge">
+                    <i data-lucide="code" style="width: 16px; height: 16px;"></i>
+                    One‑file "How‑we‑do‑things‑around‑here" guide
+                </div>
+
+                <h1 class="info-hero-title">
+                    What is <code>agent.md</code>?
+                </h1>
+
+                <p class="info-hero-description">
+                    A <strong>mini‑manifest</strong> that lives in your repo root. When an LLM‑powered agent spins up,
+                    it loads this file into the <strong>system</strong> part of its prompt, giving it permanent knowledge
+                    of your project's rules, tools and style.
+                </p>
+            </div>
+
+            <section class="space-y-8">
+                <h2 class="section-title">Four Key Benefits</h2>
+
+                <div class="info-benefits-grid">
+                    <div class="info-benefit-card">
+                        <div class="info-benefit-content">
+                            <div class="info-benefit-icon gradient-1">
+                                <i data-lucide="file-text" style="width: 24px; height: 24px;"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="info-benefit-header">
+                                    <span class="info-benefit-number">1</span>
+                                    <h3 class="info-benefit-title">Single source of truth</h3>
+                                </div>
+                                <p class="info-benefit-description">Directory layout, naming, CI steps stay consistent across agents & humans.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-benefit-card">
+                        <div class="info-benefit-content">
+                            <div class="info-benefit-icon gradient-2">
+                                <i data-lucide="zap" style="width: 24px; height: 24px;"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="info-benefit-header">
+                                    <span class="info-benefit-number">2</span>
+                                    <h3 class="info-benefit-title">Higher LLM accuracy</h3>
+                                </div>
+                                <p class="info-benefit-description">Codex scored +5 pp when an AGENTS.md was present (75% → 80%).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-benefit-card">
+                        <div class="info-benefit-content">
+                            <div class="info-benefit-icon gradient-3">
+                                <i data-lucide="users" style="width: 24px; height: 24px;"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="info-benefit-header">
+                                    <span class="info-benefit-number">3</span>
+                                    <h3 class="info-benefit-title">Zero‑friction onboarding</h3>
+                                </div>
+                                <p class="info-benefit-description">New contributors "read the manual" in one file; agents do the same in milliseconds.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-benefit-card">
+                        <div class="info-benefit-content">
+                            <div class="info-benefit-icon gradient-4">
+                                <i data-lucide="shield" style="width: 24px; height: 24px;"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="info-benefit-header">
+                                    <span class="info-benefit-number">4</span>
+                                    <h3 class="info-benefit-title">Built‑in guard‑rails</h3>
+                                </div>
+                                <p class="info-benefit-description">Embed commands like npm run lint && npm audit; the agent must pass before finishing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="section-title">Template Anatomy</h2>
+
+                <div class="info-template-grid">
+                    <div class="info-anatomy-grid">
+                        <div class="info-anatomy-card">
+                            <h4 class="info-anatomy-title">meta</h4>
+                            <p class="info-anatomy-fields">name, model, lang</p>
+                            <code class="info-anatomy-example">model: gpt-4o</code>
+                        </div>
+                        <div class="info-anatomy-card">
+                            <h4 class="info-anatomy-title">prompt</h4>
+                            <p class="info-anatomy-fields">role, tone, brand</p>
+                            <code class="info-anatomy-example">role: code‑gen</code>
+                        </div>
+                        <div class="info-anatomy-card">
+                            <h4 class="info-anatomy-title">tools</h4>
+                            <p class="info-anatomy-fields">APIs, DB handles</p>
+                            <code class="info-anatomy-example">tools: ["sql_query"]</code>
+                        </div>
+                        <div class="info-anatomy-card">
+                            <h4 class="info-anatomy-title">memory</h4>
+                            <p class="info-anatomy-fields">include/exclude</p>
+                            <code class="info-anatomy-example">exclude: node_modules/**</code>
+                        </div>
+                        <div class="info-anatomy-card">
+                            <h4 class="info-anatomy-title">tuning</h4>
+                            <p class="info-anatomy-fields">temp, max‑tokens</p>
+                            <code class="info-anatomy-example">temperature: 0.1</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="section-title">Ecosystem Support</h2>
+
+                <div class="info-ecosystem-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>File Name</th>
+                                <th>Special Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="platform-name">OpenAI Assistants</span></td>
+                                <td><code class="file-name">assistant.md</code></td>
+                                <td class="feature-text">Auto‑loaded when you call the Assistants API</td>
+                            </tr>
+                            <tr>
+                                <td><span class="platform-name">Cursor IDE</span></td>
+                                <td><code class="file-name">.cursor/rules</code></td>
+                                <td class="feature-text">Rule priorities (Always • Auto • On‑demand • Manual)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="platform-name">GitHub Copilot Chat</span></td>
+                                <td><code class="file-name">.github/copilot-instructions.md</code></td>
+                                <td class="feature-text">Lightweight bullets; repo‑wide</td>
+                            </tr>
+                            <tr>
+                                <td><span class="platform-name">Anthropic Claude Code</span></td>
+                                <td><code class="file-name">CLAUDE.md</code></td>
+                                <td class="feature-text">Inherits from parent dirs; supports includes</td>
+                            </tr>
+                            <tr>
+                                <td><span class="platform-name">Windsurf</span></td>
+                                <td><code class="file-name">.windsurfrules</code></td>
+                                <td class="feature-text">v5 spec targets API versions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="section-title">How It Works</h2>
+
+                <div class="info-workflow">
+                    <div class="info-workflow-steps">
+                        <div class="info-workflow-step space-y-1">
+                            <div class="info-workflow-number">1</div>
+                            <h4 class="info-workflow-title">Start</h4>
+                            <p class="info-workflow-desc">Agent initializes</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="info-workflow-arrow"></i>
+                        <div class="info-workflow-step space-y-1">
+                            <div class="info-workflow-number">2</div>
+                            <h4 class="info-workflow-title">Detect</h4>
+                            <p class="info-workflow-desc">Finds agent.md</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="info-workflow-arrow"></i>
+                        <div class="info-workflow-step space-y-1">
+                            <div class="info-workflow-number">3</div>
+                            <h4 class="info-workflow-title">Inject</h4>
+                            <p class="info-workflow-desc">Loads to system</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="info-workflow-arrow"></i>
+                        <div class="info-workflow-step space-y-1">
+                            <div class="info-workflow-number">4</div>
+                            <h4 class="info-workflow-title">Check</h4>
+                            <p class="info-workflow-desc">Runs validation</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="info-workflow-arrow"></i>
+                        <div class="info-workflow-step space-y-1">
+                            <div class="info-workflow-number">5</div>
+                            <h4 class="info-workflow-title">Ready</h4>
+                            <p class="info-workflow-desc">Fully configured</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="section-title">Practical Benefits</h2>
+
+                <div class="info-practical-grid">
+                    <div class="info-practical-card color-1">
+                        <div class="info-practical-content">
+                            <div class="info-practical-dot dot-1"></div>
+                            <p class="info-practical-text">Consistent code generation – imports, stylistic decisions, module boundaries align</p>
+                        </div>
+                    </div>
+                    <div class="info-practical-card color-2">
+                        <div class="info-practical-content">
+                            <div class="info-practical-dot dot-2"></div>
+                            <p class="info-practical-text">Context‑aware refactors – agent knows deprecated packages or pending DB migrations</p>
+                        </div>
+                    </div>
+                    <div class="info-practical-card color-3">
+                        <div class="info-practical-content">
+                            <div class="info-practical-dot dot-3"></div>
+                            <p class="info-practical-text">Multi‑agent coordination – planner, coder and tester share the same contract</p>
+                        </div>
+                    </div>
+                    <div class="info-practical-card color-4">
+                        <div class="info-practical-content">
+                            <div class="info-practical-dot dot-4"></div>
+                            <p class="info-practical-text">Compliance & security gates – lint, licence and audit steps baked in</p>
+                        </div>
+                    </div>
+                    <div class="info-practical-card color-5">
+                        <div class="info-practical-content">
+                            <div class="info-practical-dot dot-5"></div>
+                            <p class="info-practical-text">Non‑coding scenarios – brand tone, analytics SQL, support macros all live here</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-8">
+                <h2 class="section-title">Getting Started</h2>
+
+                <div class="info-code-block">
+                    <button class="info-copy-button" onclick="copyInfoCode()">
+                        <i data-lucide="copy" id="copy-icon" style="width: 16px; height: 16px;"></i>
+                        <i data-lucide="check-circle" id="check-icon" style="width: 16px; height: 16px; display: none;"></i>
+                    </button>
+
+                    <pre class="info-code-pre"># 1. Grab a starter template
+agentmd get openai/code‑assistant > agent.md
+
+# 2. Edit project‑specific sections (tools, memory, checks)
+
+# 3. Commit & run your agent – it auto‑detects the file</pre>
+                </div>
+
+                <p class="info-code-note">
+                    <em>Full walkthrough in the Docs → Quick‑Start.</em>
+                </p>
+            </section>
+
+            <section class="space-y-6">
+                <button class="info-tips-toggle" onclick="toggleTips()">
+                    <h2 class="info-tips-title">Advanced Tips & Pitfalls</h2>
+                    <i data-lucide="chevron-right" id="tips-chevron" style="width: 24px; height: 24px;"></i>
+                </button>
+
+                <div id="tips-content" class="info-tips-content hidden space-y-4">
+                    <div class="info-tip-item">
+                        <div class="info-tip-dot"></div>
+                        <p class="info-tip-text">Keep it under ~8 KB to minimise prompt‑token cost.</p>
+                    </div>
+                    <div class="info-tip-item">
+                        <div class="info-tip-dot"></div>
+                        <p class="info-tip-text">Version‑control the file; bump model: field when upgrading.</p>
+                    </div>
+                    <div class="info-tip-item">
+                        <div class="info-tip-dot"></div>
+                        <p class="info-tip-text">Never store secrets – reference env vars instead.</p>
+                    </div>
+                    <div class="info-tip-item">
+                        <div class="info-tip-dot"></div>
+                        <p class="info-tip-text">Use includes (!include other.md) to keep the main file small.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
 
     <!-- LLM Agent Template Hub -->
     <section id="template-hub">
@@ -1318,147 +1747,6 @@
         </div>
     </section>
 
-    <!-- Featured Agents -->
-    <section class="featured-agents">
-        <div class="container">
-            <h2 class="section-title">Featured Agent Templates</h2>
-            <p class="section-subtitle">Hand-picked configurations from top developers and companies</p>
-            
-            <div class="agents-carousel">
-                <div class="agents-track" id="agents-track">
-                    <div class="agent-card">
-                        <div class="agent-header">
-                            <div class="agent-avatar">GPT</div>
-                            <div class="agent-info">
-                                <h3>Code Assistant Pro</h3>
-                                <div class="agent-provider">OpenAI GPT-4</div>
-                            </div>
-                        </div>
-                        <p class="agent-description">
-                            Advanced code generation and debugging assistant with context awareness and multi-language support.
-                        </p>
-                        <div class="agent-tags">
-                            <span class="agent-tag">Code Gen</span>
-                            <span class="agent-tag">Debugging</span>
-                            <span class="agent-tag">Multi-lang</span>
-                        </div>
-                        <div class="agent-actions">
-                            <button class="btn btn-primary btn-small copy-agent" data-config="gpt4-code-assistant">
-                                Copy Config
-                            </button>
-                            <button class="btn btn-secondary btn-small">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="agent-card">
-                        <div class="agent-header">
-                            <div class="agent-avatar" style="background: var(--gradient-secondary);">CL</div>
-                            <div class="agent-info">
-                                <h3>Research Analyst</h3>
-                                <div class="agent-provider">Anthropic Claude</div>
-                            </div>
-                        </div>
-                        <p class="agent-description">
-                            Comprehensive research and analysis agent that processes documents, extracts insights, and generates reports.
-                        </p>
-                        <div class="agent-tags">
-                            <span class="agent-tag">Research</span>
-                            <span class="agent-tag">Analysis</span>
-                            <span class="agent-tag">Reports</span>
-                        </div>
-                        <div class="agent-actions">
-                            <button class="btn btn-primary btn-small copy-agent" data-config="claude-research">
-                                Copy Config
-                            </button>
-                            <button class="btn btn-secondary btn-small">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="agent-card">
-                        <div class="agent-header">
-                            <div class="agent-avatar" style="background: linear-gradient(135deg, #ea4335 0%, #fbbc05 100%);">GM</div>
-                            <div class="agent-info">
-                                <h3>Content Creator</h3>
-                                <div class="agent-provider">Google Gemini</div>
-                            </div>
-                        </div>
-                        <p class="agent-description">
-                            Creative writing and content generation specialist for blogs, social media, and marketing materials.
-                        </p>
-                        <div class="agent-tags">
-                            <span class="agent-tag">Content</span>
-                            <span class="agent-tag">Creative</span>
-                            <span class="agent-tag">Marketing</span>
-                        </div>
-                        <div class="agent-actions">
-                            <button class="btn btn-primary btn-small copy-agent" data-config="gemini-content">
-                                Copy Config
-                            </button>
-                            <button class="btn btn-secondary btn-small">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="agent-card">
-                        <div class="agent-header">
-                            <div class="agent-avatar" style="background: linear-gradient(135deg, #00d4ff 0%, #5b86e5 100%);">AZ</div>
-                            <div class="agent-info">
-                                <h3>Data Scientist</h3>
-                                <div class="agent-provider">Azure OpenAI</div>
-                            </div>
-                        </div>
-                        <p class="agent-description">
-                            Statistical analysis and machine learning specialist for data processing and predictive modeling.
-                        </p>
-                        <div class="agent-tags">
-                            <span class="agent-tag">Data Science</span>
-                            <span class="agent-tag">ML</span>
-                            <span class="agent-tag">Analytics</span>
-                        </div>
-                        <div class="agent-actions">
-                            <button class="btn btn-primary btn-small copy-agent" data-config="azure-data-science">
-                                Copy Config
-                            </button>
-                            <button class="btn btn-secondary btn-small">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="agent-card">
-                        <div class="agent-header">
-                            <div class="agent-avatar" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);">CS</div>
-                            <div class="agent-info">
-                                <h3>Customer Support</h3>
-                                <div class="agent-provider">Custom Model</div>
-                            </div>
-                        </div>
-                        <p class="agent-description">
-                            Intelligent customer service agent with ticket routing, FAQ responses, and escalation handling.
-                        </p>
-                        <div class="agent-tags">
-                            <span class="agent-tag">Support</span>
-                            <span class="agent-tag">FAQ</span>
-                            <span class="agent-tag">Routing</span>
-                        </div>
-                        <div class="agent-actions">
-                            <button class="btn btn-primary btn-small copy-agent" data-config="custom-support">
-                                Copy Config
-                            </button>
-                            <button class="btn btn-secondary btn-small">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Integration Code -->
     <section class="integration">
@@ -1569,7 +1857,50 @@ const assistant = new Agent(config)</code></pre>
         Want to contribute a prompt template? → <a href="#">Submit via GitHub</a>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
+
     <script>
+        lucide.createIcons();
+        let tipsExpanded = false;
+
+        function toggleTips() {
+            const content = document.getElementById('tips-content');
+            const chevron = document.getElementById('tips-chevron');
+
+            tipsExpanded = !tipsExpanded;
+
+            if (tipsExpanded) {
+                content.classList.remove('hidden');
+                chevron.setAttribute('data-lucide', 'chevron-down');
+            } else {
+                content.classList.add('hidden');
+                chevron.setAttribute('data-lucide', 'chevron-right');
+            }
+
+            lucide.createIcons();
+        }
+
+        function copyInfoCode() {
+            const codeText = `# 1. Grab a starter template
+agentmd get openai/code‑assistant > agent.md
+
+# 2. Edit project‑specific sections (tools, memory, checks)
+
+# 3. Commit & run your agent – it auto‑detects the file`;
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                const copyIcon = document.getElementById('copy-icon');
+                const checkIcon = document.getElementById('check-icon');
+
+                copyIcon.style.display = 'none';
+                checkIcon.style.display = 'block';
+
+                setTimeout(() => {
+                    copyIcon.style.display = 'block';
+                    checkIcon.style.display = 'none';
+                }, 2000);
+            });
+        }
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
@@ -1613,23 +1944,6 @@ const assistant = new Agent(config)</code></pre>
                 e.preventDefault();
                 searchInput.focus();
             }
-        });
-
-        // Copy agent config functionality
-        const copyAgentButtons = document.querySelectorAll('.copy-agent');
-        copyAgentButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const config = button.getAttribute('data-config');
-                // Simulate copying config
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                button.style.background = 'var(--color-success)';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = 'var(--color-primary)';
-                }, 2000);
-            });
         });
 
         // Copy code functionality
@@ -1702,23 +2016,6 @@ const assistant = new Agent(config)</code></pre>
         document.addEventListener('DOMContentLoaded', () => {
             animateStats();
         });
-
-        // Agent carousel auto-scroll
-        let currentSlide = 0;
-        const agentsTrack = document.getElementById('agents-track');
-        const agentCards = document.querySelectorAll('.agent-card');
-        const totalSlides = agentCards.length;
-
-        const autoScroll = () => {
-            currentSlide = (currentSlide + 1) % Math.max(1, totalSlides - 2);
-            const offset = currentSlide * 320; // card width + gap
-            agentsTrack.style.transform = `translateX(-${offset}px)`;
-        };
-
-        // Start auto-scroll after 3 seconds
-        setTimeout(() => {
-            setInterval(autoScroll, 4000);
-        }, 3000);
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
