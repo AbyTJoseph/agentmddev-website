@@ -1412,54 +1412,6 @@
             </div>
         </div>
     </section>
-
-    <!-- LLM Agent Template Hub -->
-    <section id="template-hub">
-        <div class="container">
-
-        <div class="controls">
-            <div class="search-container">
-                <div class="search-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </div>
-                <input type="text" class="search-input" placeholder="Search templates by title, tag, or description..." id="searchInput">
-            </div>
-
-            <div class="filter-bar">
-                </div>
-        </div>
-
-        <div class="results-info" id="resultsInfo"></div>
-        <div class="cards-grid" id="cardsGrid"></div>
-        <div class="no-results" id="noResults">
-            <h3>No Templates Found</h3>
-            <p>Your search or filter criteria did not match any templates. Please try again.</p>
-        </div>
-        </div>
-
-        <div class="toast" id="toast">Prompt copied to clipboard!</div>
-
-        <div class="modal-overlay" id="promptModal">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="modalTitle"></h2>
-                <button class="modal-close-btn" id="modalCloseBtn" title="Close">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
-            <div class="modal-body">
-                <pre class="modal-prompt" id="modalPrompt"></pre>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" id="modalCopyBtn">
-                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                    <span>Copy Prompt</span>
-                </button>
-            </div>
-        </div>
-        </div>
-    </section>
-
     <!-- AgentMD Guide -->
     <section id="agentmd-guide">
         <div class="container space-y-10">
@@ -1747,6 +1699,54 @@ agentmd get openai/code‑assistant > agent.md
             </section>
         </div>
     </section>
+
+    <!-- LLM Agent Template Hub -->
+    <section id="template-hub">
+        <div class="container">
+
+        <div class="controls">
+            <div class="search-container">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <input type="text" class="search-input" placeholder="Search templates by title, tag, or description..." id="searchInput">
+            </div>
+
+            <div class="filter-bar">
+                </div>
+        </div>
+
+        <div class="results-info" id="resultsInfo"></div>
+        <div class="cards-grid" id="cardsGrid"></div>
+        <div class="no-results" id="noResults">
+            <h3>No Templates Found</h3>
+            <p>Your search or filter criteria did not match any templates. Please try again.</p>
+        </div>
+        </div>
+
+        <div class="toast" id="toast">Prompt copied to clipboard!</div>
+
+        <div class="modal-overlay" id="promptModal">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <button class="modal-close-btn" id="modalCloseBtn" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <pre class="modal-prompt" id="modalPrompt"></pre>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="modalCopyBtn">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>Copy Prompt</span>
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+
 
     <!-- Integration Code -->
     <section class="integration">
