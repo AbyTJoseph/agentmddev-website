@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgentMD.dev | agent.md templates, always up‑to‑date</title>
     <meta name="description" content="The canonical library for agent.md config files. Search 400+ templates, copy instantly, and ship faster.">
-    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         
         :root {
             --color-primary: #2563EB;
@@ -1290,6 +1294,29 @@
             #agentmd-guide .info-practical-grid { grid-template-columns: 1fr; }
             #agentmd-guide section + section { margin-top: 3.5rem; }
         }
+
+        .benefit-card,
+        .practical-card,
+        .ecosystem-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover,
+        .practical-card:hover,
+        .ecosystem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .practical-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+        }
+
+        .practical-card .icon {
+            background-color: #eef2ff;
+            color: #4f46e5;
+        }
     </style>
 </head>
 <body>
@@ -1607,44 +1634,58 @@
                 </div>
             </section>
 
-            <section class="space-y-6" id="practical-benefits">
-                <h2 class="section-title">Real-World Applications</h2>
-
-                <div class="info-practical-grid">
-                    <div class="info-practical-card color-1">
-                        <div class="info-practical-content">
-                            <div class="info-practical-dot dot-1"></div>
-                            <p class="info-practical-text">Consistent Code Generation – Enforce coding standards and architectural patterns for clean, uniform code.</p>
-                        </div>
+            <section id="practical-benefits" class="py-16 sm:py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            Real-World Applications
+                        </h2>
+                        <p class="mt-4 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
+                            From code to compliance, `agent.md` delivers tangible value across diverse scenarios.
+                        </p>
                     </div>
-                    <div class="info-practical-card color-2">
-                        <div class="info-practical-content">
-                            <div class="info-practical-dot dot-2"></div>
-                            <p class="info-practical-text">Context-Aware Refactors – Perform complex refactoring with a full understanding of the repo's structure.</p>
+                    <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                        <div class="practical-card p-6 rounded-xl flex items-start gap-4">
+                            <div class="icon flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"><i class="fa-solid fa-code text-xl"></i></div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Consistent Code Generation</h3>
+                                <p class="mt-1 text-base text-gray-600">Enforce coding standards and architectural patterns for clean, uniform code.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-practical-card color-3">
-                        <div class="info-practical-content">
-                            <div class="info-practical-dot dot-3"></div>
-                            <p class="info-practical-text">Multi-Agent Coordination – Use <code>agent.md</code> as a shared "brain" for specialized agents to collaborate.</p>
+                        <div class="practical-card p-6 rounded-xl flex items-start gap-4">
+                            <div class="icon flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"><i class="fa-solid fa-wand-magic-sparkles text-xl"></i></div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Context-Aware Refactors</h3>
+                                <p class="mt-1 text-base text-gray-600">Perform complex refactoring with a full understanding of the repo's structure.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-practical-card color-4">
-                        <div class="info-practical-content">
-                            <div class="info-practical-dot dot-4"></div>
-                            <p class="info-practical-text">Compliance &amp; Security – Embed security checklists and compliance rules to validate agent outputs.</p>
+                        <div class="practical-card p-6 rounded-xl flex items-start gap-4">
+                            <div class="icon flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"><i class="fa-solid fa-people-group text-xl"></i></div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Multi-Agent Coordination</h3>
+                                <p class="mt-1 text-base text-gray-600">Use `agent.md` as a shared "brain" for specialized agents to collaborate.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-practical-card color-5">
-                        <div class="info-practical-content">
-                            <div class="info-practical-dot dot-5"></div>
-                            <p class="info-practical-text">Automated Documentation – Instruct an agent to read your code and generate well-structured documentation.</p>
+                        <div class="practical-card p-6 rounded-xl flex items-start gap-4">
+                            <div class="icon flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"><i class="fa-solid fa-user-shield text-xl"></i></div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Compliance & Security</h3>
+                                <p class="mt-1 text-base text-gray-600">Embed security checklists and compliance rules to validate agent outputs.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-practical-card color-1">
-                        <div class="info-practical-content">
-                            <div class="info-practical-dot dot-1"></div>
-                            <p class="info-practical-text">Non-Coding Scenarios – Apply the same principles to legal, marketing, or research tasks for consistency.</p>
+                        <div class="practical-card p-6 rounded-xl flex items-start gap-4">
+                            <div class="icon flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"><i class="fa-solid fa-file-pen text-xl"></i></div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Automated Documentation</h3>
+                                <p class="mt-1 text-base text-gray-600">Instruct an agent to read your code and generate well-structured documentation.</p>
+                            </div>
+                        </div>
+                        <div class="practical-card p-6 rounded-xl flex items-start gap-4">
+                            <div class="icon flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"><i class="fa-solid fa-gavel text-xl"></i></div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Non-Coding Scenarios</h3>
+                                <p class="mt-1 text-base text-gray-600">Apply the same principles to legal, marketing, or research tasks for consistency.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
