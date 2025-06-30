@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestAssured API Testing Framework - Agent MD Template | AI Agent Templates</title>
+    <meta name="description" content="Professional RestAssured API testing framework template for AI agents. Complete with Java, Maven, TestNG setup instructions and best practices.">
+    <meta name="keywords" content="RestAssured, API testing, Java, Maven, TestNG, AI agent, automation framework, template">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="RestAssured API Testing Framework - Agent MD Template">
+    <meta property="og:description" content="Professional RestAssured API testing framework template for AI agents with comprehensive setup and usage instructions.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-code: #1e293b;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .template-section {
+            background: var(--bg-primary);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+        }
+
+        /* Code Block */
+        .code-container {
+            background: var(--bg-code);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .code-header {
+            background: #334155;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #475569;
+        }
+
+        .code-title {
+            color: #f1f5f9;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .copy-btn {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .code-content {
+            padding: 1.5rem;
+            color: #e2e8f0;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: var(--bg-primary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .info-value {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary-color);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Usage Steps */
+        .usage-steps {
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+        }
+
+        /* Syntax highlighting */
+        .keyword { color: #ff79c6; }
+        .string { color: #f1fa8c; }
+        .comment { color: #6272a4; }
+        .number { color: #bd93f9; }
+        .function { color: #50fa7b; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Agent MD Templates</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/templates">Templates</a></li>
+                        <li><a href="/docs">Documentation</a></li>
+                        <li><a href="/examples">Examples</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>RestAssured API Testing Framework</h1>
+            <p>Professional AI agent template for automated API testing with Java, RestAssured, and TestNG. Build robust, maintainable test suites with industry best practices.</p>
+            
+            <div class="tech-stack">
+                <span class="tech-badge">Java 17</span>
+                <span class="tech-badge">RestAssured</span>
+                <span class="tech-badge">TestNG</span>
+                <span class="tech-badge">Maven</span>
+                <span class="tech-badge">Jackson</span>
+                <span class="tech-badge">Lombok</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Template Content -->
+                <div class="template-section">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Agent MD Template</h2>
+                            <p class="section-subtitle">Complete RestAssured API testing framework instructions for AI agents</p>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="copyTemplate()">
+                            📋 Copy Template
+                        </button>
+                        <a href="#" class="btn btn-secondary">
+                            📥 Download .md
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            🔗 Share Template
+                        </a>
+                    </div>
+
+                    <!-- Template Preview -->
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="code-title">restassured-api-testing.md</span>
+                            <button class="copy-btn" onclick="copyTemplate()">Copy</button>
+                        </div>
+                        <div class="code-content" id="templateContent"># Agent Instructions for RestAssured API Testing Framework
+
+This document provides essential instructions for an AI agent to understand, navigate, and contribute to this Java RestAssured project.
+
+## 1. Project Overview
+
+This is an automated API testing framework for the [Your Service Name] API. It uses Java, RestAssured, and TestNG to validate API endpoints. The primary goal is to ensure the correctness of API responses, including status codes, headers, and body payloads.
+
+## 2. Core Technologies
+
+- **Language**: Java 17
+- **Build Tool**: Maven
+- **API Testing**: RestAssured
+- **Test Runner**: TestNG
+- **Serialization**: Jackson (for JSON processing)
+- **Code Reduction**: Lombok
+- **Logging**: SLF4J with Logback
+
+## 3. Getting Started & Running Tests
+
+The build lifecycle is managed by `pom.xml`.
+
+### 3.1. Prerequisites
+
+- JDK 17 must be installed and configured.
+- Maven must be installed and in the system's PATH.
+
+### 3.2. Key Maven Commands
+
+All commands should be run from the project's root directory.
+
+**Compile the project:**
+```bash
+mvn clean compile
+```
+
+**Run all tests:**
+```bash
+mvn clean test
+```
+
+**Run a specific test class:**
+```bash
+mvn test -Dtest=com.yourcompany.tests.UserTests
+```
+
+**Run a single test method:**
+```bash
+mvn test -Dtest=com.yourcompany.tests.UserTests#shouldCreateUserSuccessfully
+```
+
+**Run tests for a specific environment:**
+```bash
+mvn clean test -Pstaging
+```
+
+## 4. Project Structure
+
+The project follows standard Maven conventions. Key directories for your tasks are within `src/test/`.
+
+```
+src/test/
+├── java/
+│   └── com/yourcompany/
+│       ├── clients/      # API client classes (encapsulate endpoint logic)
+│       ├── config/       # Configuration loader and holder
+│       ├── models/       # POJOs for request/response bodies
+│       ├── tests/        # TestNG test classes
+│       └── utils/        # Shared utility functions (e.g., data generators)
+└── resources/
+    ├── config-dev.properties       # Default environment configuration
+    ├── config-staging.properties   # Staging environment configuration
+    └── logback-test.xml            # Logging configuration
+pom.xml                             # Project dependencies and build configuration
+```
+
+## 5. Core Abstractions & Design Patterns
+
+To maintain clean and reusable code, we use several key abstractions. Always use these patterns.
+
+### 5.1. Configuration Management
+
+- Environment-specific details (e.g., `base.uri`, `api.key`) are stored in `.properties` files under `src/test/resources/`.
+- The `com.yourcompany.config.ConfigLoader` class reads the appropriate properties file at runtime based on the active Maven profile.
+- **NEVER** hardcode URLs, tokens, or other configuration in test classes.
+
+### 5.2. Reusable Specifications (SpecBuilder)
+
+We use a builder pattern to create reusable `RequestSpecification` and `ResponseSpecification` objects.
+
+The `com.yourcompany.utils.SpecBuilder` class is the central place for this.
+
+**Example Usage:**
+```java
+// In a test or client class
+RequestSpecification requestSpec = SpecBuilder.getRequestSpec();
+ResponseSpecification responseSpec = SpecBuilder.getResponseSpec();
+
+given().spec(requestSpec).body(userPayload)
+    .when().post("/users")
+    .then().spec(responseSpec).statusCode(201);
+```
+
+### 5.3. API Clients
+
+For each API resource (e.g., Users, Products), there is a corresponding client class in the `com.yourcompany.clients` package (e.g., `UserClient.java`).
+
+This class encapsulates the RestAssured given/when/then logic for all operations on that resource.
+
+**Example UserClient.java method:**
+```java
+public class UserClient {
+    public static Response createUser(User userPayload) {
+        return given().spec(SpecBuilder.getRequestSpec())
+            .body(userPayload)
+            .when().post("/api/v1/users");
+    }
+}
+```
+
+### 5.4. Data Models (POJOs)
+
+Request and response bodies are mapped to Plain Old Java Objects (POJOs) located in `com.yourcompany.models`.
+
+We use Lombok annotations (`@Data`, `@Builder`, `@NoArgsConstructor`, `@AllArgsConstructor`) to eliminate boilerplate code.
+
+Always create or use an existing POJO for JSON payloads.
+
+## 6. Writing a New Test: Golden Path
+
+Follow these steps to add a new API test.
+
+**Scenario**: Add a test to verify fetching a user by ID.
+
+1. **Check/Create POJO**: Ensure a `User.java` POJO exists in the models package to represent the user data in the response.
+
+2. **Add Method to API Client**: Add a new static method to `UserClient.java`.
+   ```java
+   // In com.yourcompany.clients.UserClient.java
+   public static Response getUser(String userId) {
+       return given().spec(SpecBuilder.getRequestSpec())
+           .when().get("/api/v1/users/" + userId);
+   }
+   ```
+
+3. **Write the Test Method**: In the relevant test class (e.g., `UserTests.java`), add a new `@Test` method.
+   ```java
+   // In com.yourcompany.tests.UserTests.java
+   @Test
+   public void shouldGetUserByIdSuccessfully() {
+       // Assume a user with ID "user-123" is created in a @BeforeMethod or exists in the test environment
+       String userId = "user-123";
+       
+       Response response = UserClient.getUser(userId);
+       
+       response.then()
+           .spec(SpecBuilder.getResponseSpec()) // Verifies common assertions like Content-Type
+           .statusCode(200);
+       
+       User user = response.as(User.class);
+       assertEquals(user.getId(), userId);
+       assertNotNull(user.getFirstName());
+   }
+   ```
+
+## 7. Dependencies
+
+To add a new dependency, edit the `<dependencies>` section of the `pom.xml` file.
+
+After editing, let Maven resolve the new dependency. Run `mvn clean install` to confirm it works.
+
+```xml
+<dependency>
+    <groupId>com.new.library</groupId>
+    <artifactId>new-library-artifact</artifactId>
+    <version>1.0.0</version>
+    <scope>test</scope>
+</dependency>
+```</div>
+                    </div>
+
+                    <!-- Key Features -->
+                    <h3 style="margin: 2rem 0 1rem 0; font-size: 1.5rem; font-weight: 700;">Key Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🏗️</div>
+                            <h4 class="feature-title">Structured Architecture</h4>
+                            <p class="feature-description">Clean separation of concerns with dedicated packages for clients, models, tests, and utilities.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚙️</div>
+                            <h4 class="feature-title">Environment Management</h4>
+                            <p class="feature-description">Multi-environment support with Maven profiles and property-based configuration.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h4 class="feature-title">Reusable Components</h4>
+                            <p class="feature-description">Builder patterns and specification objects for consistent and maintainable test code.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h4 class="feature-title">Comprehensive Testing</h4>
+                            <p class="feature-description">Full API validation including status codes, headers, and response body verification.</p>
+                        </div>
+                    </div>
+
+                    <!-- Usage Steps -->
+                    <h3 style="margin: 2rem 0 1rem 0; font-size: 1.5rem; font-weight: 700;">How to Use This Template</h3>
+                    <div class="usage-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Copy the Template</h3>
+                                <p>Copy the agent MD template above and save it as a .md file in your project repository.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Customize for Your Project</h3>
+                                <p>Replace placeholder values like [Your Service Name] and com.yourcompany with your actual project details.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Set Up Project Structure</h3>
+                                <p>Create the recommended Maven project structure and implement the core abstractions described in the template.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Train Your AI Agent</h3>
+                                <p>Provide this template to your AI agent to help it understand your project structure and coding conventions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Template Info -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Template Details</h3>
+                        <ul class="info-list">
+                            <li>
+                                <span class="info-label">Category</span>
+                                <span class="tag">API Testing</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Language</span>
+                                <span class="info-value">Java</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Framework</span>
+                                <span class="info-value">RestAssured</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Test Runner</span>
+                                <span class="info-value">TestNG</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Build Tool</span>
+                                <span class="info-value">Maven</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Difficulty</span>
+                                <span class="info-value">Intermediate</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Quick Actions</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <button class="btn btn-primary" onclick="copyTemplate()">📋 Copy Template</button>
+                            <a href="#" class="btn btn-secondary">📖 View Documentation</a>
+                            <a href="#" class="btn btn-secondary">🔗 GitHub Repository</a>
+                        </div>
+                    </div>
+
+                    <!-- Related Templates -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Related Templates</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">Selenium WebDriver Testing</a>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">Postman Collection Testing</a>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; padding: 0.5rem 0;">Cypress E2E Testing</a>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Template Stats</h3>
+                        <ul class="info-list">
+                            <li>
+                                <span class="info-label">Downloads</span>
+                                <span class="info-value">2,165</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Rating</span>
+                                <span class="info-value">⭐ 4.8/5</span>
+                            </li>
+                            <li>
+                                <span class="info-label">Last Updated</span>
+                                <span class="info-value">Dec 2024</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function copyTemplate() {
+            const templateContent = document.getElementById('templateContent').textContent;
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(templateContent).then(() => {
+                    showNotification('Template copied to clipboard!', 'success');
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                    showNotification('Failed to copy template', 'error');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = templateContent;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                textArea.style.top = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                    showNotification('Template copied to clipboard!', 'success');
+                } catch (err) {
+                    console.error('Failed to copy: ', err);
+                    showNotification('Failed to copy template', 'error');
+                }
+                
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                color: white;
+                font-weight: 600;
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                ${type === 'success' ? 'background: var(--success-color);' : 'background: #ef4444;'}
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Trigger animation
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Remove notification
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading states to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.onclick !== copyTemplate) {
+                    const originalText = this.textContent;
+                    this.textContent = 'Loading...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.disabled = false;
+                    }, 2000);
+                }
+            });
+        });
+
+        // Add syntax highlighting to code blocks
+        function highlightSyntax() {
+            const codeBlocks = document.querySelectorAll('.code-content');
+            codeBlocks.forEach(block => {
+                let html = block.innerHTML;
+                
+                // Java keywords
+                html = html.replace(/\b(public|private|protected|static|final|class|interface|extends|implements|import|package|return|if|else|for|while|try|catch|finally|throw|throws|new|this|super|null|true|false|void|int|String|boolean|Response|RequestSpecification|ResponseSpecification)\b/g, '<span class="keyword">$1</span>');
+                
+                // Strings
+                html = html.replace(/"([^"\\]*(\\.[^"\\]*)*)"/g, '<span class="string">"$1"</span>');
+                html = html.replace(/'([^'\\]*(\\.[^'\\]*)*)'/g, '<span class="string">\'$1\'</span>');
+                
+                // Comments
+                html = html.replace(/\/\/.*$/gm, '<span class="comment">$&</span>');
+                html = html.replace(/\/\*[\s\S]*?\*\//g, '<span class="comment">$&</span>');
+                
+                // Numbers
+                html = html.replace(/\b\d+\b/g, '<span class="number">$&</span>');
+                
+                // Function names
+                html = html.replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\(/g, '<span class="function">$1</span>(');
+                
+                block.innerHTML = html;
+            });
+        }
+
+        // Initialize syntax highlighting when page loads
+        document.addEventListener('DOMContentLoaded', highlightSyntax);
+
+        // Add scroll-to-top functionality
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            
+            if (scrollTop > 300) {
+                if (!document.getElementById('scrollTopBtn')) {
+                    const scrollBtn = document.createElement('button');
+                    scrollBtn.id = 'scrollTopBtn';
+                    scrollBtn.innerHTML = '↑';
+                    scrollBtn.style.cssText = `
+                        position: fixed;
+                        bottom: 2rem;
+                        right: 2rem;
+                        width: 3rem;
+                        height: 3rem;
+                        border-radius: 50%;
+                        background: var(--primary-color);
+                        color: white;
+                        border: none;
+                        font-size: 1.25rem;
+                        font-weight: bold;
+                        cursor: pointer;
+                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease;
+                        z-index: 1000;
+                    `;
+                    
+                    scrollBtn.addEventListener('mouseenter', function() {
+                        this.style.background = 'var(--secondary-color)';
+                        this.style.transform = 'translateY(-2px)';
+                    });
+                    
+                    scrollBtn.addEventListener('mouseleave', function() {
+                        this.style.background = 'var(--primary-color)';
+                        this.style.transform = 'translateY(0)';
+                    });
+                    
+                    scrollBtn.addEventListener('click', function() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                    
+                    document.body.appendChild(scrollBtn);
+                }
+            } else {
+                const scrollBtn = document.getElementById('scrollTopBtn');
+                if (scrollBtn) {
+                    scrollBtn.remove();
+                }
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.feature-card, .step, .sidebar-card');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + K to copy template
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                copyTemplate();
+            }
+            
+            // Escape to close any modals (future enhancement)
+            if (e.key === 'Escape') {
+                // Close any open modals or overlays
+            }
+        });
+
+        // Add print styles
+        const printStyles = `
+            @media print {
+                .header, .sidebar, .action-buttons, .copy-btn {
+                    display: none !important;
+                }
+                
+                .content-grid {
+                    grid-template-columns: 1fr !important;
+                }
+                
+                .code-container {
+                    break-inside: avoid;
+                }
+                
+                .step {
+                    break-inside: avoid;
+                }
+                
+                body {
+                    font-size: 12pt;
+                    line-height: 1.4;
+                }
+                
+                .hero {
+                    background: none !important;
+                    color: black !important;
+                    padding: 2rem 0 !important;
+                }
+            }
+        `;
+
+        const printStyleSheet = document.createElement('style');
+        printStyleSheet.textContent = printStyles;
+        document.head.appendChild(printStyleSheet);
+    </script>
+</body>
+</html>
