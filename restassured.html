@@ -14,9 +14,9 @@
     
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
+            --primary-color: #6D28D9;
+            --secondary-color: #4F46E5;
+            --accent-color: #8B5CF6;
             --text-primary: #1f2937;
             --text-secondary: #6b7280;
             --bg-primary: #ffffff;
@@ -48,43 +48,97 @@
 
         /* Header */
         .header {
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
+            left: 0;
+            right: 0;
+            background: rgba(248, 250, 252, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-neutral-200);
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .header-content {
+        
+        .header.scrolled {
+            background: rgba(248, 250, 252, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             padding: 1rem 0;
         }
-
+        
         .logo {
-            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-weight: 700;
-            color: var(--primary-color);
+            font-size: 1.25rem;
+            color: var(--color-neutral-900);
             text-decoration: none;
         }
-
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        
         .nav-links {
             display: flex;
+            align-items: center;
             gap: 2rem;
-            list-style: none;
         }
-
-        .nav-links a {
+        
+        .nav-link {
+            color: var(--color-neutral-700);
             text-decoration: none;
-            color: var(--text-secondary);
             font-weight: 500;
             transition: color 0.3s ease;
+            position: relative;
         }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
+        
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--color-neutral-300);
+            border-radius: 8px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--color-neutral-700);
+        }
+        
+        .theme-toggle:hover {
+            background: var(--color-neutral-100);
+            color: var(--color-primary);
         }
 
         /* Hero Section */
@@ -139,10 +193,23 @@
         }
 
         .template-section {
+            max-width: 950px;
             background: var(--bg-primary);
             border-radius: 1rem;
             padding: 2rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .template-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
         }
 
         .section-header {
@@ -186,19 +253,20 @@
         }
 
         .btn-primary {
-            background: var(--primary-color);
+            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
             color: white;
+            border: none;
         }
 
         .btn-primary:hover {
-            background: var(--secondary-color);
+            opacity: 0.9;
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
         }
 
         .btn-secondary:hover {
@@ -416,20 +484,25 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">Agent MD Templates</a>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/templates">Templates</a></li>
-                        <li><a href="/docs">Documentation</a></li>
-                        <li><a href="/examples">Examples</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <div class="logo-icon">A</div>
+                    AgentMD.dev
+                </a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">Browse</a>
+                    <a href="#" class="nav-link">Docs</a>
+                    <a href="#" class="nav-link">GitHub</a>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
         </div>
     </header>
 
